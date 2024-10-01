@@ -10,5 +10,9 @@ docker volume create jupyter-lab-ws
 
 启动容器
 ```bash
-docker run --rm --gpus all -v jupyter-lab-ws:/home/jovyan/workspace -p 8888:8888 jupyterlab:3.11.10-bullseye
+docker run --rm --gpus all \
+	-v jupyter-lab-ws:/root/workspace \
+	-v ~/models:/mnt/models
+	-p 8888:8888 \
+	jupyterlab:3.11.10-bullseye
 ```
